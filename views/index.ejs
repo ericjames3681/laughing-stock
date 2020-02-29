@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Laughing Stock</title>
+    <link rel='stylesheet' href='/sylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Laughing Stock</h1>
+    <p>Welcome</p>
+    <li>
+      <% if (user) { %>
+        <a href="/logout">Logout</a>
+      <% } else { %>
+        <a href="/auth/google">Login</a>
+      <% } %>
+    </li>
+    
   </body>
 </html>
