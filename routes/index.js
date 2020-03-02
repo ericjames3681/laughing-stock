@@ -7,7 +7,7 @@ const indexCtrl = require('../controllers')
 router.get('/', indexCtrl.index);
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.redirect('/users');
+  res.redirect('/venues');
 });
 
 router.get('/auth/google', passport.authenticate('google',

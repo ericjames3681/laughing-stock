@@ -1,19 +1,65 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Laughing Stock</title>
-    <link rel='stylesheet' href='/sylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Laughing Stock</h1>
-    <p>Welcome</p>
-    <li>
-      <% if (user) { %>
-        <a href="/logout">Logout</a>
-      <% } else { %>
-        <a href="/auth/google">Login</a>
-      <% } %>
-    </li>
-    
-  </body>
-</html>
+<%- include('./partials/header') %>
+
+
+<div class="section no-pad-bot">
+  <div class="container">
+    <br><br>
+    <h1 class="header center teal-text text-lighten-2">Clubs and Comics</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">A place for funny</h5>
+    </div>
+    <div class="row center">
+      <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Welcome</a>
+    </div>
+    <br><br>
+
+  </div>
+</div>
+<div class="parallax"><img src="/neon.png" alt="Unsplashed background img 1"></div>
+<!-- <img src=".../images/neon.png" alt="" class="circle responsive-img"> -->
+</div>
+<div class="container">
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">mic</i></h2>
+          <h5 class="center">Comics</h5>
+
+          <p class="light">You want 'em? We got 'em. You can always add a new one! (Just no Gallagher, please.)</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">local_bar</i></h2>
+          <h5 class="center">Venues</h5>
+
+          <p class="light">Traveling? New in town? Here's a few venues of interest... we have have forgotten one so feel free to make an addition.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">event</i></h2>
+          <h5 class="center">Events</h5>
+
+          <p class="light">Wanna see if a comedian is performing at your favorite venue? Come on in, dont be shy. </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<%- include('./partials/footer') %>

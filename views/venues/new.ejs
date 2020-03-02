@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Enter a New Venue</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Because we may have missed one or twelve...</h5>
+        </div>
+        <div class="row center">
+            <form action="/venues" method="POST">
+                    <div class = "row">
+                       <div class = "input-field col s6">
+                          <i class = "material-icons prefix">account_circle</i>
+                          <input 
+                             type = "text" class = "active validate" required />
+                          <label for = "name">Venue Name</label>
+                       </div>
+                    </div>
+                <div class = "row">
+                    <div class = "input-field col s6">
+                       <i class = "material-icons prefix">mode_edit</i>
+                       <textarea id = "address" class = "materialize-textarea"></textarea>
+                       <label for = "address">Address</label>
+                    </div>
+                 </div>
+                 <div class = "row">
+                    <div class = "input-field col s6">
+                       <i class = "material-icons prefix">mode_edit</i><p>
+                       <input type="checkbox" checkbox="checked"/><span>Two Drink Minimum?</span></p>
+                    </div>
+                 </div>
+                    <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" value="Add Venue">Add New</a>
+                
+            </form>
+        </div>
+        <br><br>
+
+        </div>
+    </div>
+    <div class="parallax"><img src="../images/neon.png" alt="Unsplashed background img 1"></div>
+    <!-- <img src="https://media.gettyimages.com/photos/comedian-steven-wright-guests-on-the-david-letterman-show-at-the-in-picture-id808991672?s=2048x2048" alt="" class="circle responsive-img"> -->
+    </div>
+                
+
+
+
+            
+
+
+
+
+
+<%- include('../partials/footer') %>
