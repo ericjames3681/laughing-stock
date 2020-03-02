@@ -9,27 +9,34 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Laughing Stock</title>
       <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-      <link rel = "stylesheet"
-         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel = "stylesheet"
-         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-      <script type = "text/javascript"
-         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-      </script> 
-    </head>
-    <body>
-        <nav class="white" role="navigation">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Materialize CSS Framework -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="stylesheets/style.css" />
+      <!-- JavaScript for Materialize -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<!-- <style>
+ 
+.nav-wrapper {
+  background-color: rgb(71, 56, 56) !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+ 
+ 
+</style>  -->
+  <nav>
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/auth/google">LOG IN</a></li>
+      <ul class="right">
+        <li>
+        <% if (user) { %>
+          <a href="/logout"><i class="material-icons left">trending_flat</i>LOG OUT</a>
+        <% } else { %>
+          <a href="/auth/google"><i class="material-icons left">vpn_key</i>LOGIN WITH GOOGLE</a>
       </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <% } %>
     </div>
   </nav>
 

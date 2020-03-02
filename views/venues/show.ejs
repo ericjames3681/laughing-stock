@@ -1,6 +1,25 @@
 <%- include('../partials/header') %>
 
-
+<legend>Venue Details</legend>
+<table id="list">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Pricey?</th>
+      <th>Two Drink Minimum?</th>
+    </tr>
+    </thead>
+    <br>
+  <tbody>
+      <tr>
+        <td><%= venue.name %></td>
+        <td><%= venue.address %></td>
+        <td><%= venue.priceTix %></td>
+        <td><%= venue.twoDrink %></td>
+      </tr>
+  </tbody>
+</table>
 
 
 

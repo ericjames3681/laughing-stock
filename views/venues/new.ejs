@@ -12,27 +12,25 @@
         <div class="row center">
             <form action="/venues" method="POST">
                     <div class = "row">
-                       <div class = "input-field col s6">
+                       <div class = "input-field col s12">
                           <i class = "material-icons prefix">account_circle</i>
-                          <input 
-                             type = "text" class = "active validate" required />
-                          <label for = "name">Venue Name</label>
+                          <textarea id="name" class="materialize-textarea">
+                          <label for="name">Venue Name</label>
                        </div>
                     </div>
                 <div class = "row">
-                    <div class = "input-field col s6">
+                    <div class = "input-field col s12">
                        <i class = "material-icons prefix">mode_edit</i>
-                       <textarea id = "address" class = "materialize-textarea"></textarea>
+                       <textarea id="address" class="materialize-textarea"></textarea>
                        <label for = "address">Address</label>
                     </div>
                  </div>
                  <div class = "row">
-                    <div class = "input-field col s6">
+                    <div class = "input-field col s12">
                        <i class = "material-icons prefix">mode_edit</i><p>
                        <input type="checkbox" checkbox="checked"/><span>Two Drink Minimum?</span></p>
                     </div>
                  </div>
-                    <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" value="Add Venue">Add New</a>
                 
             </form>
         </div>
