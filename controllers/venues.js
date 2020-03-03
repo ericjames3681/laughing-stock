@@ -4,7 +4,6 @@ module.exports = {
     // show,
     new: newVenue,
     create,
-
 };
 
 function newVenue(req, res) {
@@ -21,7 +20,7 @@ function create(req, res) {
     req.body.twoDrink = !!req.body.twoDrink;
     const venue = new Venue(req.body);
     venue.save(function(err, doc) {
-        if(err) return res.render('venues/new', {venues, user: req.user});
+        if(err) return res.render('venues/new', {venue, user: req.user});
         console.log(venue);
         res.redirect('/venues/new');
     });

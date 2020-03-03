@@ -17,34 +17,27 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-<!-- <style>
- 
-.nav-wrapper {
-  background-color: rgb(71, 56, 56) !important;
-  font-size: 14px;
-  font-weight: bold;
-}
- 
- 
-</style>  -->
-  <nav>
+
+  <nav class="teal">
     <div class="nav-wrapper container">
       <ul class="right">
         <li>
         <% if (user) { %>
           <a href="/logout"><i class="material-icons left">trending_flat</i>LOG OUT</a>
         <% } else { %>
-          <a href="/auth/google"><i class="material-icons left">vpn_key</i>LOGIN WITH GOOGLE</a>
+          <a href="/auth/google"><i class="material-icons left">vpn_key</i>LOGIN WITH GOOGLE</a> 
+        </li>
+        <li>
+          <a href="/venues/new"><i class="material-icons left">local_bar</i>VENUES</a>
+        </li>
+        <li>
+          <a href="/venues/new"><i class="material-icons left">event</i>EVENTS</a>
+        </li>
+        <li>
+          <a href="/venues/new"><i class="material-icons left">mic</i>COMICS</a>
+        </li>
+        <% } %>
       </ul>
-      <% } %>
     </div>
   </nav>
-
-        <!-- <a href="/">Home</a>
-        <a href="/logout">Logout</a>
-
-        <a href="/auth/google">Login</a> -->
-
-
   <main>
-    <h1>Laughing Stock</h1>
