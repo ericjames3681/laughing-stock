@@ -23,19 +23,20 @@
       <ul class="right">
         <li>
         <% if (user) { %>
+          <li>
+            <a href="/venues"><i class="material-icons left">local_bar</i>VENUES</a>
+          </li>
+          <li>
+            <a href="/venues/new"><i class="material-icons left">event</i>EVENTS</a>
+          </li>
+          <li>
+            <a href="/venues/new"><i class="material-icons left">mic</i>COMICS</a>
+          <li>
           <a href="/logout"><i class="material-icons left">trending_flat</i>LOG OUT</a>
-        <% } else { %>
-          <a href="/auth/google"><i class="material-icons left">vpn_key</i>LOGIN WITH GOOGLE</a> 
-        </li>
-        <li>
-          <a href="/venues/new"><i class="material-icons left">local_bar</i>VENUES</a>
-        </li>
-        <li>
-          <a href="/venues/new"><i class="material-icons left">event</i>EVENTS</a>
-        </li>
-        <li>
-          <a href="/venues/new"><i class="material-icons left">mic</i>COMICS</a>
-        </li>
+          </li>
+          <% } else { %>
+            <a href="/auth/google"><i class="material-icons left">vpn_key</i>LOGIN WITH GOOGLE</a> 
+          </li>
         <% } %>
       </ul>
     </div>

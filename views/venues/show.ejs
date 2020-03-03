@@ -12,12 +12,14 @@
     </thead>
     <br>
   <tbody>
-      <tr>
+      <% venues.forEach(function(venue)) { %>      
+    <tr>
         <td><%= venue.name %></td>
         <td><%= venue.address %></td>
         <td><%= venue.priceTix %></td>
-        <td><%= venue.twoDrink %></td>
-      </tr>
+        <td><%= venue.twoDrink ? 'Yep' : 'Nah' %></td>
+    </tr>
+<% }); %>
   </tbody>
 </table>
 
