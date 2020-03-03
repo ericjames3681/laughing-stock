@@ -17,6 +17,7 @@ var app = express();
 
 var indexRouter = require('./routes/index');
 var venuesRouter = require('./routes/venues');
+var performersRouter = require('./routes/performers');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,6 +42,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/venues', venuesRouter);
+app.use('/performers', performersRouter);
 
 
 // catch 404 and forward to error handler

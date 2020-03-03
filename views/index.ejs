@@ -6,9 +6,15 @@
       <h1>Laughing Stock</h1>
       <h5 class="header col s12 light">A place for funny</h5>
     </div>
+    <% if (user) { %>
+      <div class="row center">
+        <p>Welcome back, <%= user.name %>!</p>
+      </div>
+      <% } else { %>
     <div class="row center">
       <a href="/auth/google" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Welcome</a>
     </div>
+    <% } %>
   </div>
 </div>
 <div class="parallax-container">

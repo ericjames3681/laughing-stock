@@ -10,6 +10,11 @@ var venueSchema = new Schema({
         enum: [ '$', '$$', '$$$']
     },
     twoDrink: Boolean,
+    events: [],
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
   }, {
     timestamps: true
 });

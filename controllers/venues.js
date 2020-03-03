@@ -21,9 +21,14 @@ function newVenue(req, res) {
         title: 'Add Venue',
         user: req.user});
 }
+
 function create(req, res) {
     req.body.twoDrink = !!req.body.twoDrink;
     const venue = new Venue(req.body);
+    // req.body.createdBy = req.user._id;
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
     venue.save(function(err, doc) {
         if(err) return res.render('venues/new', {venue, user: req.user});
         console.log(venue);
