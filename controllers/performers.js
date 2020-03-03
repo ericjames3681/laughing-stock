@@ -1,8 +1,20 @@
 const Performer = require('../models/performer');
 
 module.exports = {
+    index,
     new: newPerformer,
     create
+}
+
+function index(req, res) {
+    Performer.find({}, function(err, performers) {
+        if (err) return next(err);
+        res.render('performers/index', {
+            title: 'All Performers',
+            performers, 
+            user: req.user,
+            name: req.query.name});
+    });
 }
 
 function newPerformer(req, res) {

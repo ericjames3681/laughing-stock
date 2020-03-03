@@ -1,19 +1,19 @@
 <%- include('../partials/header') %>
 
 <h1 class="header center teal-text text-lighten-2">Comedians
-    
+
 </h1>
 <div class="parallax-container">
-  <div class="parallax"><img src="https://i.imgur.com/QHZktNq.png"></div>
+  <div class="parallax"><img src="https://i.imgur.com/Slbl0ad.png"></div>
 </div>
 <table id="list">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Address</th>
-      <th>Pricey?</th>
-      <th>Two Drink Minimum?</th>
-      <th>Added by</th>
+      <th>Funny</th>
+      <th>Touring?</th>
+      <th>Fans</th>
+      <!-- <th>Added by</th> -->
       <th>Upcoming Events</th>
     </tr>
   </thead>
@@ -21,11 +21,11 @@
   <tbody>
     <% performers.forEach(function(p) { %>      
       <tr>
-        <td><%=  %></td>
-        <td><%=  %></td>
-        <td><%= %></td>
-        <td><%=  %></td>
-        <td><%=  %></td>
+        <td><%=p.name%></td>
+        <td><%=p.funny%></td>
+        <td><%=p.touring%></td>
+        <!-- <td></td> -->
+        <!-- <td><createdby??????</td> -->
       </tr>
       <% }); %>
     </tbody>
