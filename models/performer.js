@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 var performerSchema = new Schema({
     name: String,
-    touring: Boolean,
+    touring: {
+        type: Boolean,
+        default: false
+    },
     funny: {
         type: String,
         enum: [ 'Meh', 'Sure', 'Hilarious!']

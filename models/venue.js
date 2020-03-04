@@ -3,22 +3,40 @@ var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var reviewSchema = new Schema({
-  
-  createdBy: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
+  content: {
+    type: String, 
+    required: true
+  },
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
+    default: 3
+  },
+  // createdBy: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // }
+}, {
+  timestamps: true
 })
 
 var venueSchema = new Schema({
-    name: String,
+    name: {
+      type: String,
+      required: true
+    },
     address: String,
     priceTix: {
         type: String,
         enum: [ '$', '$$', '$$$']
     },
-    twoDrink: Boolean,
+    twoDrink: {
+      type: Boolean,
+      default: false
+    },
     events: [],
+    reviews: [reviewSchema]
   }, {
     timestamps: true
 });

@@ -34,7 +34,6 @@ function show(req, res) {
 function create(req, res) {
     req.body.twoDrink = !!req.body.twoDrink;
     const venue = new Venue(req.body);
-    // req.body.createdBy = req.user._id;
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }

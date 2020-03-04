@@ -26,7 +26,6 @@ function newPerformer(req, res) {
 function create(req, res) {
     req.body.touring = !!req.body.touring;
     const performer = new Performer(req.body);
-    //performer.createdBy = req.user._id;
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }

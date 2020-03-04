@@ -18,6 +18,8 @@ var app = express();
 var indexRouter = require('./routes/index');
 var venuesRouter = require('./routes/venues');
 var performersRouter = require('./routes/performers');
+var reviewsRouter = require('./routes/reviews');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,6 +44,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/venues', venuesRouter);
+app.use('/', reviewsRouter);
 app.use('/performers', performersRouter);
 
 
