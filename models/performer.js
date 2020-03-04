@@ -10,10 +10,6 @@ var performerSchema = new Schema({
         enum: [ 'Meh', 'Sure', 'Hilarious!']
     },
     favoritedBy: [],
-    createdBy: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }
   }, {
     timestamps: true
 });

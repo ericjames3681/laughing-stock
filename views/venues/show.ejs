@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<h1 class="header center">Reviews</h1>
+<div class="parallax-container">
+    <div class="parallax"><img src="https://i.imgur.com/685de8s.png" ></div>
+</div>
+<section id="show-page" class="center-align">
+    <h4>Name: </h4>
+    <h3 class="card-panel teal-text text-lighten-2"><%= venue.name %></h3>
+    <h4>Address: </h4>
+    <h3 class="card-panel teal-text text-lighten-2"><%= venue.address %></h3>
+    <h4>Pricey?</h4>
+    <h3 class="card-panel teal-text text-lighten-2"><%= venue.priceTix %></h3>
+    <h4>Two Drink Minimum?</h4>
+    <h3 class="card-panel teal-text text-lighten-2"><%= venue.twoDrink ? 'Yep' : 'Nah' %></h3>
+</section><br><br>
+
+<%- include('../partials/footer') %>

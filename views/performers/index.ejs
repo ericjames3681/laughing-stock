@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1 class="header center teal-text text-lighten-2">Comedians
+<h1 class="header center text-lighten-2">Comedians
 
 </h1>
 <div class="parallax-container">
@@ -12,9 +12,7 @@
       <th>Name</th>
       <th>Funny</th>
       <th>Touring?</th>
-      <th>Fans</th>
-      <!-- <th>Added by</th> -->
-      <th>Upcoming Events</th>
+      <th>You likey?</th>
     </tr>
   </thead>
   <br>
@@ -24,8 +22,7 @@
         <td><%=p.name%></td>
         <td><%=p.funny%></td>
         <td><%=p.touring%></td>
-        <!-- <td></td> -->
-        <!-- <td><createdby??????</td> -->
+        <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a></td>
       </tr>
       <% }); %>
     </tbody>

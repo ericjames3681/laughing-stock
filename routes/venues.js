@@ -5,6 +5,7 @@ const venuesCtrl = require('../controllers/venues');
 
 router.get('/new', venuesCtrl.new);
 router.get('/', venuesCtrl.index);
+router.get('/:id', venuesCtrl.show);
 router.post('/', venuesCtrl.create);
 
 // router.get( '/users', usersCtrl.index);

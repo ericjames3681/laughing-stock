@@ -2,8 +2,9 @@ const Venue = require('../models/venue');
 
 module.exports = {
     index,
+    show,
     new: newVenue,
-    create,
+    create
 };
 
 function index(req, res) {
@@ -15,13 +16,21 @@ function index(req, res) {
             user: req.user,
             name: req.query.name});
     });
-}
+}   
 function newVenue(req, res) {
     res.render('venues/new', {
         title: 'Add Venue',
         user: req.user});
 }
-
+function show(req, res) {
+    Venue.findById(req.params.id, function(err, venue) {
+        res.render('venues/show', { 
+            title: 'Venue Detail', 
+            venue,
+            user: req.user,
+        });
+    })
+}
 function create(req, res) {
     req.body.twoDrink = !!req.body.twoDrink;
     const venue = new Venue(req.body);

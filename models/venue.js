@@ -2,6 +2,14 @@ var mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+var reviewSchema = new Schema({
+  
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
+})
+
 var venueSchema = new Schema({
     name: String,
     address: String,
@@ -11,10 +19,6 @@ var venueSchema = new Schema({
     },
     twoDrink: Boolean,
     events: [],
-    createdBy: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
   }, {
     timestamps: true
 });
