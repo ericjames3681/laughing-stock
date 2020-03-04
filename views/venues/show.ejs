@@ -60,7 +60,25 @@
                 <td><%= r.createdAt.toLocaleDateString() %></td>
                 <td><%= r.content %></td>
                 <td><%= r.rating %></td>
-              </tr>
+            </tr>
+            <!-- user must match with who created the review NOT ANY (user) -->
+            <!--  if (r.createdBy.equals(user && user._id)) { %> -->
+                <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                    <!-- Value attribute is being set to the comment's current text -->
+                    <br><br><label>Edit: </label>
+                    <textarea name="content"><%= r.content %></textarea>
+                    <label>Rating: </label>
+                    <select name="rating">
+                        <option value="" disabled selected>Choose 1-5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="submit" value="Edit Review" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">
+                  </form>
+            <!-- }; %> -->
               <% }); %>
               <tr>
                 <td colspan="2"></td>
