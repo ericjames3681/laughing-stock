@@ -23,7 +23,7 @@ function newVenue(req, res) {
         user: req.user});
 }
 function show(req, res) {
-    Venue.findById(req.params.id, function(err, venue) {
+    Venue.findById(req.params.id).populate('reviews.createdBy').exec(function(err, venue) {
         res.render('venues/show', { 
             title: 'Venue Detail', 
             venue,

@@ -48,6 +48,13 @@
           </li>
         <% } %>
       </ul>
+      <ul class="left">
+        <% if (user) { %>
+        <li>
+          <li><%= user.name %></li>
+        </li>
+        <% } %>
+      </ul>
     </div>
   </nav>
   <main>

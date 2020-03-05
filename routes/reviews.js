@@ -5,6 +5,7 @@ var reviewsCtrl = require('../controllers/reviews');
 
 router.post('/venues/:id/reviews', isLoggedIn, reviewsCtrl.create);
 router.put('/reviews/:id', isLoggedIn, reviewsCtrl.update)
+router.delete('/reviews/:id', isLoggedIn, reviewsCtrl.delete)
 
 function isLoggedIn(req, res, next){
     if ( req.isAuthenticated() ) return next();
