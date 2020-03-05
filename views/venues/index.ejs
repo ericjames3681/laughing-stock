@@ -24,16 +24,18 @@
         <td><%= venue.address %></td>
         <td><%= venue.priceTix %></td>
         <td><%= venue.twoDrink ? 'Yep' : 'Nah' %></td>
-        <td><%= venue.name %></td>
+        <td><%= venue.createdBy.name %></td>
         <td></td>
         <td><a href="venues/<%= venue._id %>">REVIEWS</a></td>
       </tr>
       <% }); %>
     </tbody>
   </table><br>
+  <% if (user) { %> 
   <div class="icon-block">
     <a href="/venues/new"><i class="material-icons left">add</i>ADD VENUE</a>
   </div>
+  <% } %>
 
 <br><br><br><br><br>
 
