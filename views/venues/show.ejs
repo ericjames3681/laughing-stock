@@ -1,80 +1,63 @@
+
 <%- include('../partials/header') %>
 
 <h1 class="header center">Reviews</h1>
 <div class="parallax-container">
     <div class="parallax"><img src="https://i.imgur.com/685de8s.png" ></div>
 </div>
-<table class="striped responsive-table">
+<table class="striped responsive-table card-panel">
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Pricey?</th>
-        <th>Two Drink Min?</th>
-        <th>Added on: </th>
-        <th>Upcoming Events</th>
-      </tr>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Pricey?</th>
+            <th>Two Drink Min?</th>
+            <th>Added on: </th>
+        </tr>
     </thead>
-    <br>
+<br>
     <tbody>
         <tr>
-        <td><%= venue.name %></td>
-        <td><%= venue.address %></td>
-        <td><%= venue.priceTix %></td>
-        <td><%= venue.twoDrink ? 'Yep' : 'Nah' %></td>
-        <td><%= venue.createdAt.toLocaleDateString() %></td>
-        </tr><br><br>
+            <td><%= venue.name %></td>
+            <td><%= venue.address %></td>
+            <td><%= venue.priceTix %></td>
+            <td><%= venue.twoDrink ? 'Yep' : 'Nah' %></td>
+            <td><%= venue.createdAt.toLocaleDateString() %></td>
+        </tr>
     </tbody>
 </table>
-<h3 class="center-align card-panel">Reviews</h3>
-    <div class="row center">
-        <form id="add-review-form" action="/venues/<%= venue._id %>/reviews" class="center-align" method="POST">
-            <label class="input-field col s12">Review:</label>
-            <textarea class="materialize-textarea" name="content"></textarea>
-            <label class="input-field col s12">Rating:</label>
-                <select name="rating">
-                    <option value="" disabled selected>Choose 1-5</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            <input type="submit" value="Add Review" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">
-        </form>
-    </div>
-    <% if (venue.reviews.length) { %>
-        <table>
-          <thead>
+<% if (venue.reviews.length) { %>
+    <table class="striped responsive-table card-panel">
+        <thead>
             <tr>
-                 <th>Date</th>
-              <th>Review</th>
-              <th>Rating</th>
-              <th>Reviewer: </th>
-              <td></td>
-              <td></td>
+                <th>Date</th>
+                <th>Review</th>
+                <th>Rating</th>
+                <th>Reviewer: </th>
             </tr>
-          </thead>
-          <tbody>
+        </thead>
+        <tbody>
             <% let total = 0 %>
             <% venue.reviews.forEach(function(review) { %>
-              <% total += review.rating %>
-              <tr>
-                <td><%= review.createdAt.toLocaleDateString() %></td>
-                <td><%= review.content %></td>
-                <td><%= review.rating %></td>
-                <td><%= review.createdBy.name %></td>
-                <td>
-                <form action="/reviews/<%= review.id %>?_method=PUT" method="POST">
-                    <div class = "row">
-                        <div class = "input-field col s12">
-                           <i class = "material-icons prefix">mode_edit</i>
-                              <textarea id="name" class="materialize-textarea" name="content"><%= review.content %></textarea>
-                           <label>Edit Review</label>
-                        </div>
-                     </div>
-                    <div>
-                        <label>Rating: </label>
+                <% total += review.rating %>
+                <tr>
+                    <span class="card-title">Edit:</span>
+                    <td class="left-align card-panel"><%= review.createdAt.toLocaleDateString() %></td>
+                    <td class="left-align card-panel"><%= review.content %></td>
+                    <td class="left-align card-panel"><%= review.rating %></td>
+                    <td class="left-align card-panel"><%= review.createdBy.name %></td>
+                </tr>
+            </tbody>
+<% if (user) { %> 
+        <div class="center-align small card">
+            <form id="review-form" action="/reviews/<%= review.id %>?_method=PUT" method="POST">
+                <div class = "row">
+                    <div class = "input-field col s12">
+                        <i class = "material-icons prefix">mode_edit</i>
+                        <textarea id="name" class="materialize-textarea" name="content"><%= review.content %></textarea>
+                        <label>Edit Review</label>
+                    </div>
+                    <div class = "input-field col s12">
                         <select name="rating">
                             <option value="" disabled selected>Choose 1-5</option>
                             <option value="1">1</option>
@@ -83,26 +66,49 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
+                        <label>Rating:</label>
                     </div>
-                    <input type="submit" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">
-                </form>
-                </td>
-                <td>
+                </div>
+            </form>
+            <div class="card-action">
+            <button onclick="javascript:{document.getElementById('review-form').submit();}" type="submit" class="btn-large waves-effect waves-light teal lighten-1 right black-text">Submit</button>
                 <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete" id="download-button" class="btn-large waves-effect waves-light red lighten-1">
+                    <button type="submit" class="btn-large waves-effect waves-light red lighten-1 left black-text">DELETE</button>
                 </form>
-                </td>
-            </tr>
-              <% }); %>
-              <tr>
-                <td colspan="2"><strong>Average</strong></td>
-                <td><strong><%= (total / venue.reviews.length).toFixed(1) %></strong></td>
-              </tr>
-          </tbody>
-        </table>
-      <% } else { %>
-        <h5>No Reviews Yet</h5><br><br><br><br>
-      <% } %>
+            </div>
+        </div>
+<% } %>
+                
+                        <span class="card-title">What THE OTHERS think:</span>
+                        <% }); %>
+                        <tr>
+                            <td colspan="2"><strong>Average</strong></td>
+                            <td><strong><%= (total / venue.reviews.length).toFixed(1) %></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <h5>No Reviews Yet</h5>
+                    <% } %>
+                <% if (user) { %>
+    <span class="card-title">New Review:</span>
+        <div class="striped responsive-table card-panel">
+            <form id="add-review-form" action="/venues/<%= venue._id %>/reviews" class="center-align" method="POST">
+                <label class="input-field col s12">Review:</label>
+                <textarea class="materialize-textarea" name="content"></textarea>
+                <label class="input-field col s12">Rating:</label>
+                    <select name="rating">
+                        <option value="" disabled selected>Choose 1-5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                <input type="submit" value="Add Review" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">
+            </form>
+        </div>
+        <% } %>
       
 
 <%- include('../partials/footer') %>

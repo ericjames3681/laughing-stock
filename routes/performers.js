@@ -5,6 +5,8 @@ const performersCtrl = require('../controllers/performers');
 router.get('/new', performersCtrl.new);
 router.get('/', performersCtrl.index);
 router.post('/', isLoggedIn, performersCtrl.create);
+router.post('/:id', isLoggedIn, performersCtrl.addFav);
+
 
 function isLoggedIn(req, res, next){
     if ( req.isAuthenticated() ) return next();

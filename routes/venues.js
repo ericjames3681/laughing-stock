@@ -5,7 +5,7 @@ const venuesCtrl = require('../controllers/venues');
 /* GET /venues/new . */
 
 router.get('/new', venuesCtrl.new);
-router.get('/', isLoggedIn, venuesCtrl.index);
+router.get('/', venuesCtrl.index);
 router.get('/:id', venuesCtrl.show);
 router.post('/', isLoggedIn, venuesCtrl.create);
 

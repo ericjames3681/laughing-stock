@@ -41,7 +41,7 @@ function update(req, res) {
 
     Venue.findOne({'reviews._id': req.params.id}, function(err, venue){
         const reviewSubdoc = venue.reviews.id(req.params.id);
-        // if (!reviewSubdoc.createdBy.equals(req.user && req.user._id)) return res.redirect(`/venues/${venue._id}`);
+    // if (!reviewSubdoc.createdBy.equals(req.user && req.user._id)) return res.redirect(`/venues/${venue._id}`);
         reviewSubdoc.content = req.body.content;
         reviewSubdoc.rating = req.body.rating;
         venue.save(function(err){

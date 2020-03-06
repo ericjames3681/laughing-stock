@@ -11,8 +11,6 @@
       <th>Address</th>
       <th>Pricey?</th>
       <th>Two Drink Min?</th>
-      <th>Added by</th>
-      <th>Upcoming Events</th>
       <th>Reviews</th>
     </tr>
   </thead>
@@ -24,8 +22,6 @@
         <td><%= venue.address %></td>
         <td><%= venue.priceTix %></td>
         <td><%= venue.twoDrink ? 'Yep' : 'Nah' %></td>
-        <td><%= venue.createdBy %></td>
-        <td></td>
         <td><a href="venues/<%= venue._id %>">REVIEWS</a></td>
       </tr>
       <% }); %>

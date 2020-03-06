@@ -3,7 +3,34 @@ const Performer = require('../models/performer');
 module.exports = {
     index,
     new: newPerformer,
-    create
+    create,
+    addFav
+}
+
+function addFav(req, res) {
+    Performer.findOne({ _id: req.params.id, favoritedBy: req.user._id }, function(err, performer) {
+        if(!performer) {
+            Performer.findById(req.params.id, function(err, performer) {
+                performer.favoritedBy.push(req.user._id);
+                performer.save(function() {
+                    res.redirect('/performers');
+                });
+            });
+        } else {
+            res.redirect('/performers');
+        }
+    });
+    // Performer.findById(req.params.id, function(err, performer) {
+        // const subdoc = performer.favoritedBy[0];
+        // console.log(subdoc) // { _id: '501d86090d371bab2c0341c5', name: 'Liesl' }
+        // subdoc.isNew;
+        // if (performer.favoritedBy.id(req.user._id)) return res.redirect('/performers');
+        // performer.favoritedBy.push(req.user._id);
+        // performer.save(function(err) {
+        //   res.redirect(`/performers/${performer._id}`);
+        // });
+    //   });
+
 }
 
 function index(req, res) {

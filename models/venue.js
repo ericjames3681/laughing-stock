@@ -36,7 +36,6 @@ var venueSchema = new Schema({
       type: Boolean,
       default: false
     },
-    events: [],
     reviews: [reviewSchema]
   }, {
     timestamps: true
