@@ -5,7 +5,7 @@ const passport = require('passport');
 const indexCtrl = require('../controllers')
 
 router.get('/', indexCtrl.index);
-/* GET home page. */
+
 router.get('/', function(req, res) {
   res.redirect('/venues');
 });

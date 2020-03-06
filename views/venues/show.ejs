@@ -3,9 +3,9 @@
 
 <h1 class="header center">Reviews</h1>
 <div class="parallax-container">
-    <div class="parallax"><img src="https://i.imgur.com/685de8s.png" ></div>
+    <div class="parallax"><img src="https://i.imgur.com/WhK5728.png" ></div>
 </div>
-<table class="striped responsive-table card-panel">
+<table class="striped responsive-table card-panel hoverable">
     <thead>
         <tr>
             <th>Name</th>
@@ -27,7 +27,8 @@
     </tbody>
 </table>
 <% if (venue.reviews.length) { %>
-    <table class="striped responsive-table card-panel">
+    
+    <table class="striped responsive-table card-panel hoverable">
         <thead>
             <tr>
                 <th>Date</th>
@@ -48,8 +49,8 @@
                     <td class="left-align card-panel"><%= review.createdBy.name %></td>
                 </tr>
             </tbody>
-<% if (user) { %> 
-        <div class="center-align small card">
+<% if (user.name === review.createdBy.name) { %> 
+        <div class="center-align small card hoverable">
             <form id="review-form" action="/reviews/<%= review.id %>?_method=PUT" method="POST">
                 <div class = "row">
                     <div class = "input-field col s12">
@@ -78,21 +79,19 @@
             </div>
         </div>
 <% } %>
-                
-                        <span class="card-title">What THE OTHERS think:</span>
-                        <% }); %>
-                        <tr>
-                            <td colspan="2"><strong>Average</strong></td>
-                            <td><strong><%= (total / venue.reviews.length).toFixed(1) %></strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <% } else { %>
-                    <h5>No Reviews Yet</h5>
-                    <% } %>
-                <% if (user) { %>
+            <% }); %>
+            <tr>
+                <td colspan="2"><strong>Average</strong></td>
+                <td><strong><%= (total / venue.reviews.length).toFixed(1) %></strong></td>
+            </tr>
+        </tbody>
+    </table>
+    <% } else { %>
+        <h5>No Reviews Yet</h5>
+        <% } %>
+    <% if (user) { %>
     <span class="card-title">New Review:</span>
-        <div class="striped responsive-table card-panel">
+        <div class="striped responsive-table card-panel hoverable">
             <form id="add-review-form" action="/venues/<%= venue._id %>/reviews" class="center-align" method="POST">
                 <label class="input-field col s12">Review:</label>
                 <textarea class="materialize-textarea" name="content"></textarea>

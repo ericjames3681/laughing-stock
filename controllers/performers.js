@@ -11,26 +11,21 @@ function addFav(req, res) {
     Performer.findOne({ _id: req.params.id, favoritedBy: req.user._id }, function(err, performer) {
         if(!performer) {
             Performer.findById(req.params.id, function(err, performer) {
-                performer.favoritedBy.push(req.user._id);
-                performer.save(function() {
+                if(performer.favoritedBy.indexOf(req.user.id) !== -1){
                     res.redirect('/performers');
-                });
-            });
-        } else {
+                } 
+                else {
+                    performer.favoritedBy.push(req.user._id);
+                    performer.save(function(err) {
+                        res.redirect('/performers');
+                    });
+                }
+                });                   
+            }     
+        else {
             res.redirect('/performers');
         }
     });
-    // Performer.findById(req.params.id, function(err, performer) {
-        // const subdoc = performer.favoritedBy[0];
-        // console.log(subdoc) // { _id: '501d86090d371bab2c0341c5', name: 'Liesl' }
-        // subdoc.isNew;
-        // if (performer.favoritedBy.id(req.user._id)) return res.redirect('/performers');
-        // performer.favoritedBy.push(req.user._id);
-        // performer.save(function(err) {
-        //   res.redirect(`/performers/${performer._id}`);
-        // });
-    //   });
-
 }
 
 function index(req, res) {
@@ -58,7 +53,6 @@ function create(req, res) {
     }
     performer.save(function(err, doc) {
         if(err) return res.render('performers/new', { performer, user: req.user});
-        console.log(performer);
         res.redirect('/performers/new');
     });
 }

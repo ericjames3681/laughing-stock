@@ -6,12 +6,13 @@
 <div class="parallax-container">
   <div class="parallax"><img src="https://i.imgur.com/Slbl0ad.png"></div>
 </div>
-<table class="center-align striped responsive-table">
+<table class="center-align highlight responsive-table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Funny</th>
       <th>Touring?</th>
+      <th>Any Fans?</th>
       <% if (user) { %>
       <th>You likey?</th>
       <% } %>
@@ -24,6 +25,7 @@
         <td><%=p.name%></td>
         <td><%=p.funny%></td>
         <td><%=p.touring%></td>
+        <td><%=p.favoritedBy.length%></td>
         <% if (user) { %>
         <td>
                 <div>
