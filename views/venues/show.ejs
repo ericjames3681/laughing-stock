@@ -48,7 +48,8 @@
                     <td class="left-align card-panel"><%= review.createdBy.name %></td>
                 </tr>
             </tbody>
-<% if (user.name == review.createdBy.name) { %> 
+<% if (user) { %>
+<% if (user.name === review.createdBy.name) { %> 
         <div class="center-align small card hoverable">
             <form id="review-form" action="/reviews/<%= review.id %>?_method=PUT" method="POST">
                 <div class = "row">
@@ -77,6 +78,7 @@
                 </form>
             </div>
         </div>
+        <% } %>       
 <% } %>
             <% }); %>
             <tr>
