@@ -10,8 +10,8 @@ nav ul a,
 nav .brand-logo {
   color: rgb(68, 68, 68);
 }
-body {
-  background-image: "https://i.imgur.com/swh1D0T.png";
+h1 {
+  font-family: "Passion One", cursive;
 }
 
 p {
