@@ -2,64 +2,74 @@
 
 <h1 class="header center text-lighten-2">Enter a New Venue</h1>
 <div class="parallax-container">
-   <div class="parallax"><img src="https://i.imgur.com/QHZktNq.png?1"></div>
+  <div class="parallax"><img src="https://i.imgur.com/QHZktNq.png?1" /></div>
 </div>
-<div id="index-banner">
-   <div class="section no-pad-bot">
+<div class="container">
+  <div id="index-banner">
+    <div class="section no-pad-bot">
       <div class="container">
-         
-         <div class="row center">
-            <h5 class="header col s12 light">(Because we may have missed one or twelve...)</h5>
-         </div>
+        <div class="row center">
+          <h5 class="header col s12 light">
+            (Because we may have missed one or twelve...)
+          </h5>
+        </div>
       </div>
-   </div>
+    </div>
+  </div>
+
+  <div class="row center">
+    <form action="/venues" method="POST">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea
+            id="name"
+            class="materialize-textarea"
+            name="name"
+          ></textarea>
+          <label>Venue Name</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <div class="input-field">
+          <i class="material-icons prefix">directions</i>
+          <textarea
+            id="address"
+            class="materialize-textarea"
+            name="address"
+            required
+            pattern="[1-9][0-9]{0,4} [A-Z].+"
+          ></textarea>
+          <label>Address</label>
+        </div>
+      </div>
+      <div class="input-field col s6">
+        <select name="priceTix">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="$">$</option>
+          <option value="$$">$$</option>
+          <option value="$$$">$$$</option>
+          <label for="priceTix">Pricey?</label>
+        </select>
+      </div>
+      <div class="input-field col s6">
+        <p>
+          <label>
+            <input type="checkbox" name="twoDrink" />
+            <span>Two Drink Minimum?</span>
+          </label>
+        </p>
+      </div>
+      <input
+        type="submit"
+        id="download-button"
+        class="btn-large waves-effect waves-light teal lighten-1"
+      />
+    </form>
+  </div>
 </div>
 
-
-   <div class="row center">
-      <form action="/venues" method="POST">
-            <div class = "row">
-               <div class = "input-field col s12">
-                  <i class = "material-icons prefix">mode_edit</i>
-                     <textarea id="name" class="materialize-textarea" name="name"></textarea>
-                  <label>Venue Name</label>
-               </div>
-            </div>
-            <div class = "input-field col s12">
-               <div class = "input-field">
-                  <i class = "material-icons prefix">directions</i>
-                  <textarea id="address" class="materialize-textarea" name="address" required pattern="[1-9][0-9]{0,4} [A-Z].+"></textarea>
-                  <label>Address</label>
-               </div>
-            </div>
-            <div class="input-field col s6">
-               <select name = "priceTix">
-                 <option value="" disabled selected>Choose your option</option>
-                 <option value="$">$</option>
-                 <option value="$$">$$</option>
-                 <option value="$$$">$$$</option>
-                 <label for="priceTix">Pricey?</label>
-               </select>
-            </div>
-            <div class="input-field col s6">
-               <p>
-                  <label>
-                     <input type="checkbox" name="twoDrink"/>
-                        <span>Two Drink Minimum?</span>
-                  </label>
-               </p>
-            </div>
-         <input type="submit" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">
-      </form>
-   </div>
-</div>
-
-
-
-
-                
-
-
-
-      <script>M.AutoInit();</script>
+<script>
+  M.AutoInit();
+</script>
 <%- include('../partials/footer') %>

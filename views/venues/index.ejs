@@ -1,22 +1,23 @@
 <%- include('../partials/header') %>
 
-<h1 class="header center text-lighten-2">Venues</h1>
+<h1 class="header center text-lighten-2">VENUES</h1>
 <div class="parallax-container">
-  <div class="parallax"><img src="https://i.imgur.com/QHZktNq.png?1"></div>
+  <div class="parallax"><img src="https://i.imgur.com/QHZktNq.png?1" /></div>
 </div>
-<table class="striped responsive-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Pricey?</th>
-      <th>Two Drink Min?</th>
-      <th>Reviews</th>
-    </tr>
-  </thead>
-  <br>
-  <tbody>
-    <% venues.forEach(function(venue) { %>      
+<div class="container">
+  <table class="striped responsive-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Pricey?</th>
+        <th>Two Drink Min?</th>
+        <th>Reviews</th>
+      </tr>
+    </thead>
+    <br />
+    <tbody>
+      <% venues.forEach(function(venue) { %>
       <tr>
         <td><%= venue.name %></td>
         <td><%= venue.address %></td>
@@ -26,12 +27,11 @@
       </tr>
       <% }); %>
     </tbody>
-  </table><br>
-  <% if (user) { %> 
+  </table>
+  <br />
+  <% if (user) { %>
   <div class="icon-block">
     <a href="/venues/new"><i class="material-icons left">add</i>ADD VENUE</a>
   </div>
-  <% } %>
-
-
-<%- include('../partials/footer') %>
+  <% } %> <%- include('../partials/footer') %>
+</div>

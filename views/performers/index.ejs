@@ -1,26 +1,25 @@
 <%- include('../partials/header') %>
 
-<h1 class="header center text-lighten-2">Comedians
-
-</h1>
+<h1 class="header center text-lighten-2">COMICS</h1>
 <div class="parallax-container">
-  <div class="parallax"><img src="https://i.imgur.com/4RuROtB.png"></div>
+  <div class="parallax"><img src="https://i.imgur.com/4RuROtB.png" /></div>
 </div>
-<table class="center-align highlight responsive-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Funny</th>
-      <th>Touring?</th>
-      <th>Any Fans?</th>
-      <% if (user) { %>
-      <th>You likey?</th>
-      <% } %>
-    </tr>
-  </thead>
-  <br>
-  <tbody>
-    <% performers.forEach(function(p) { %>      
+<div class="container">
+  <table class="center-align highlight responsive-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Funny</th>
+        <th>Touring?</th>
+        <th>Any Fans?</th>
+        <% if (user) { %>
+        <th>You likey?</th>
+        <% } %>
+      </tr>
+    </thead>
+    <br />
+    <tbody>
+      <% performers.forEach(function(p) { %>
       <tr>
         <td><%=p.name%></td>
         <td><%=p.funny%></td>
@@ -28,22 +27,31 @@
         <td><%=p.favoritedBy.length%></td>
         <% if (user) { %>
         <td>
-                <div>
-                    <form action="/performers/<%= p._id %>" method="POST">
-                        <button type="submit" class="btn-floating btn-large waves-effect waves-light red pulse"><i class="material-icons">favorite</i></button>
-                    </form>
-                </div>
+          <div>
+            <form action="/performers/<%= p._id %>" method="POST">
+              <button
+                type="submit"
+                class="btn-floating btn-large waves-effect waves-light red pulse"
+              >
+                <i class="material-icons">favorite</i>
+              </button>
+            </form>
+          </div>
         </td>
         <% } %>
       </tr>
       <% }); %>
     </tbody>
-  </table><br>
-  <% if (user) { %> 
+  </table>
+  <br />
+  <% if (user) { %>
   <div class="icon-block">
-    <a href="/performers/new"><i class="material-icons left">add</i>ADD PERFORMER</a>
+    <a href="/performers/new"
+      ><i class="material-icons left">add</i>ADD PERFORMER</a
+    >
   </div>
   <% } %>
-<br><br><br><br><br>
+  <br /><br /><br /><br /><br />
 
-<%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>
+</div>

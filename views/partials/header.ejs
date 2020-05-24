@@ -12,16 +12,17 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!-- Materialize CSS Framework -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <!-- <link rel="stylesheet" href="stylesheets/style.css" /> -->
+      <link rel="stylesheet" href="/public/style.css" type="css"/>
       <!-- JavaScript for Materialize -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body>
+<body class="grey lighten-4">
 
   <nav class="green lighten-1">
     <div class="nav-wrapper">
+       <!-- <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a> -->
       <ul class="right">
-        <li>
+
         <% if (user) { %>
           <li>
             <a href="/venues"><i class="material-icons left">local_bar</i>VENUES</a>
@@ -52,4 +53,4 @@
     </div>
   </nav>
   <main>
-    <div class="container">
+    
