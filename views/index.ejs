@@ -3,21 +3,21 @@
 <div class="section no-pad-bot">
   <div class="container">
     <div class="row center">
-      <h1 class="header col s12 bold">LAUGHING STOCK</h1>
-      <h5 class="header col s12 light">(A place for funny)</h5>
-    </div>
-    <% if (user) { %>
-      <div class="row center">
-        <h4 class="align-center">Welcome back, <%= user.name %>!</h3>
-      </div>
+      <h1 class="header col s12 bold valign-wrapper">LAUGHING STOCK</h1>
+      <h5 class="header col s12 light valign-wrapper">(A place for funny)</h5>
+      <% if (user) { %>
+        
+        <h4 class="header col s12 light valign-wrapper">Welcome back, <%= user.name %>!</h3>
+        </div>
+      
       <% } else { %>
     <div class="row center">
-      <a href="/auth/google" id="download-button" class="btn-large waves-effect waves-light green lighten-1">Welcome</a>
+      <a href="/auth/google" id="download-button" class="btn-large waves-effect waves-light green lighten-1 z-depth-2">Welcome</a>
     </div>
     <% } %>
   </div>
 </div>
-<div class="parallax-container">
+<div class="parallax-container z-depth-2">
   <div class="parallax"><img src="https://i.imgur.com/i2zIvpT.png" ></div>
 </div>
 <div class="container">
@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col s12 m4">
         <div class="icon-block">
-        <h2 class="center brown-text"><i class="material-icons">mic</i></a></h2>
+        <h2 class="center brown-text"><a href="/performers"><i class="material-icons">mic</i></a></h2>
           <h5 class="center">COMICS</h5>
 
           <p class="light">You want 'em? We got 'em. You can always add a new one! (Just no Gallagher, please.)</p>
@@ -34,8 +34,8 @@
       </div>
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center brown-text"><i class="material-icons">local_bar</i></h2>
-          <h5 class="center">Venues</h5>
+          <h2 class="center brown-text"><a href="/venues"><i class="material-icons">local_bar</i></a></h2>
+          <h5 class="center">VENUES</h5>
 
           <p class="light">Traveling? New in town? Here's a few venues of interest... we might have forgotten one so feel free to make an addition.</p>
         </div>
@@ -43,9 +43,9 @@
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center brown-text"><i class="material-icons">event</i></h2>
-          <h5 class="center">Events</h5>
+          <h5 class="center">EVENTS</h5>
 
-          <p class="light">Wanna see if a comedian is performing at your favorite venue? Come on in, dont be shy. </p>
+          <p class="light">Wanna see if a comedian is performing at your favorite venue? Come on in, dont be shy. (coming soon)</p>
         </div>
       </div>
 
